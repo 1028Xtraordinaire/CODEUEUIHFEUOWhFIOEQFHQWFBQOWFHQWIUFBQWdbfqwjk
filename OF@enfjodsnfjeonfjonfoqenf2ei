@@ -1,0 +1,24 @@
+/*
+This program should draw 10 circles on the screen.
+* The largest circle should have a radius of 150 pixels.
+* Each loop, the radius should decrease by 15 pixels. 
+* Each circle should be a random color and centered on the canvas.
+
+How can you change the for loop to fix this program?
+*/
+
+function main() {
+    const STARTING_RADIUS = 150;
+        let circle = new Circle(STARTING_RADIUS);
+        circle.setPosition(getWidth() / 2, getHeight() / 2);
+        circle.setColor(Randomizer.nextColor());
+        add(circle);
+    for (let i = 9; i > 0; i--){
+        let radius = i * 15
+        let circle = new Circle(radius);
+        circle.setPosition(getWidth() / 2, getHeight() / 2);
+        circle.setColor(Randomizer.nextColor());
+        add(circle);
+    }
+}
+main();
